@@ -1,0 +1,51 @@
+<section
+  [ngClass]="active ? 'creditcard active' : 'creditcard'"
+  id="creditCard"
+>
+  <div class="view-front">
+    <div class="logo">
+      <img [src]="form.cardNumber | logo" alt="" />
+    </div>
+    <img
+      src="../../../../assets/img/logo/chip-tarjeta.png"
+      alt=""
+      class="chip"
+    />
+    <div class="data-card-front">
+      <div class="group" id="number-card">
+        <p class="number">
+          {{ form.cardNumber | number }}
+        </p>
+      </div>
+      <div class="d-flex">
+        <div class="group" id="name-card">
+          <p class="title">Card Holder</p>
+          <p class="name">{{ form.cardName || "AD SOYAD" | uppercase }}</p>
+        </div>
+        <div class="group" id="expiration">
+          <p class="title">Expires</p>
+          <p class="expiration">
+            <span class="month">{{ form.expirationMonth || "MM" }}</span
+            >/<span class="year">{{ form.expirationYear || "YY" }}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="view-back">
+    <div class="bar-magnet"></div>
+    <div class="title">
+      <p class="title-cvv">CVV</p>
+    </div>
+
+    <div class="bar-white">
+      <span class="cvv" style="color: #000; margin-right: 10px">{{
+        form.cvv || "****" | cvv
+      }}</span>
+    </div>
+    <div class="logo">
+      <img [src]="form.cardNumber | logo" alt="" />
+    </div>
+  </div>
+</section>

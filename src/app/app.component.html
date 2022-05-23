@@ -1,0 +1,7 @@
+<div class="container">
+  <app-credit-card [form]="form" [active]="focus"> </app-credit-card>
+  <app-form
+    (formSubmit)="getDataForm($event)"
+    (focus)="focus = $event"
+  ></app-form>
+</div>

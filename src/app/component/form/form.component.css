@@ -1,0 +1,103 @@
+.form{
+  background: #fff;
+  width: 800px;
+  max-width: 1000px;
+  padding: 150px 30px 30px 30px;
+  border-radius: 10px;
+  position:relative;
+  top:-120px;
+
+}
+.form label{
+  display: block;
+  color: #0d0d0e;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.form input,
+.form select,
+.btn
+{
+border: 2px solid #CED6E0;
+font-size: 18px;
+height: 50px;
+width: 100%;
+padding: 5px 12px;
+transition: .3s ease all;
+border-radius: 5px;
+color: #0d0d0e;
+}
+
+
+.form input:hover,
+.form select:hover{
+border: 2px solid #93bded
+ }
+
+ .form input:focus,
+.form select:focus{
+outline:rgb(4, 4, 4);
+box-shadow: 1px 7px 10px -5px rgba(90, 116, 148, 0.3);
+ }
+
+ .form input{
+   margin-bottom: 20px;
+   text-transform: uppercase;
+
+ }
+
+ .form .flex{
+   display: flex;
+   justify-content: space-between;
+
+ }
+
+ .form .expiration{
+   width: 100%;
+ }
+
+ .form .cvv{
+   min-width: 100px;
+ }
+
+ .form .group-select{
+   width: 100%;
+   margin-right: 15px;
+   position: relative;
+
+ }
+
+ .form select{
+   -webkit-appearance:none ;
+
+ }
+
+ .form .group-select i{
+  position: absolute;
+  color: #CED6E0;
+  top: 18px;
+  right: 15px;
+  transition: .3s ease all;
+
+}
+
+.form .group-select:hover i{
+  color: #93bfed;
+}
+
+
+.form .btn{
+  border: none;
+  padding: 10px;
+  font-size: 22px;
+  color: #fff;
+  background: #2364d2;
+  box-shadow: 2px 2px 10px 0px rgba(0, 85, 212, 0.4);
+  cursor:pointer
+}
+
+.form .btn:hover{
+  background: #1850b1;
+
+}

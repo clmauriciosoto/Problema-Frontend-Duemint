@@ -1,0 +1,78 @@
+<form action="" class="form">
+  <div class="form-group">
+    <label for="card-number">Card Number</label>
+    <input
+      type="text"
+      class="form-control"
+      name="cardNumber"
+      [(ngModel)]="form.cardNumber"
+      (keyup)="formatCardNumber($event)"
+      maxlength="19"
+    />
+  </div>
+  <div class="form-group">
+    <label for="card-name">Card Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="card-name"
+      name="cardName"
+      [(ngModel)]="form.cardName"
+      (keyup)="formatCardName($event)"
+    />
+  </div>
+
+  <div class="flex">
+    <div class="form-group expiration">
+      <label for="month-expiration">Expiration Date</label>
+      <div class="flex">
+        <div class="group-select">
+          <select
+            name="month"
+            [(ngModel)]="form.expirationMonth"
+            (ngModelChange)="changeYear()"
+          >
+            <option value="" disabled>Month</option>
+            <option [value]="item" *ngFor="let item of monthList">
+              {{ item }}
+            </option>
+          </select>
+          <i class="fas fa-angle-down"></i>
+        </div>
+        <div class="group-select">
+          <select
+            name="year"
+            [(ngModel)]="form.expirationYear"
+            (ngModelChange)="changeYear()"
+          >
+            <option value="" disabled>Year</option>
+            <option [value]="item.value" *ngFor="let item of yearList">
+              {{ item.label }}
+            </option>
+          </select>
+          <i class="fas fa-angle-down"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="group-cvv">
+      <label for="cvv">cvv</label>
+      <input
+        type="text"
+        class="cvv"
+        name="cvv"
+        placeholder="CVV"
+        maxlength="4"
+        [(ngModel)]="form.cvv"
+        (keyup)="formatCvv($event)"
+        (blur)="focusCvv(false)"
+        (focus)="focusCvv(true)"
+      />
+    </div>
+  </div>
+  <button class="btn">Submit</button>
+</form>
+
+<pre>
+  {{ form | json }}
+</pre>
